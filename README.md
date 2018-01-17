@@ -1,2 +1,4 @@
 # hello-world
-just another respository
+hi xuxiaobei.
+
+Hubot here,I like Node.js and coffeescript.
