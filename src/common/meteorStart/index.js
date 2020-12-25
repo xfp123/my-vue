@@ -9,7 +9,7 @@
  */
 
 
-export class meteorStart {
+class meteorStart {
   //class中的构造函数 this指向该类的实例
   constructor() {
     //画布
@@ -35,7 +35,7 @@ export class meteorStart {
     //调用初始化方法
     this.init();
   }
-  init() {
+  init () {
     //创建画布
     document.body.innerHTML += "<canvas id='meteorCanvas'></canvas>";
     this.canvas = document.getElementById('meteorCanvas');
@@ -44,6 +44,7 @@ export class meteorStart {
     this.canvas.style.display = 'block';
     this.canvas.style.position = 'absolute';
     this.canvas.style.top = '0px';
+    this.canvas.style.zIndex = '0';
     this.context = this.canvas.getContext('2d');
 
     var drawMountainX = 0;
@@ -68,7 +69,7 @@ export class meteorStart {
   }
 
   //天空
-  drawSky() {
+  drawSky () {
     //beginPath() 方法开始一条路径，或重置当前的路径
     this.context.beginPath();
     //创建线性的渐变对象：渐变可用于填充矩形、圆形、线条、文本等等  context.createLinearGradient(x0,y0,x1,y1);
@@ -87,7 +88,7 @@ export class meteorStart {
   }
 
   //山脉
-  drawMountain() {
+  drawMountain () {
     this.context.beginPath();
     this.context.fillStyle = '#111';
     this.mountainArr.forEach((v) => {
@@ -108,7 +109,7 @@ export class meteorStart {
   }
 
   //星星
-  darwStar() {
+  darwStar () {
     this.starArr.forEach((v) => {
       this.context.beginPath();
       this.context.fillStyle = "rgba(255,255,255," + v[2] / 10 + ")";
@@ -120,7 +121,7 @@ export class meteorStart {
   }
 
   //月亮
-  drawMoon() {
+  drawMoon () {
     this.context.beginPath();
     //createLinearGradient() 方法创建放射状/圆形渐变对象 与圆的位置有关
     var MoonStyle = this.context.createRadialGradient(200, 100, 38, 200, 100, 50);
@@ -134,7 +135,7 @@ export class meteorStart {
   }
 
   //流星
-  drawMeteor() {
+  drawMeteor () {
     var meteorNum = this.rand(-9, 9);
     if (meteorNum == 1) {
       this.meteorArr.push([this.rand(0, this.width + this.height), 0, this.rand(1, 3)]);
@@ -180,7 +181,7 @@ export class meteorStart {
   }
 
   //每隔20ms变化一次状态
-  drawTimer() {
+  drawTimer () {
     this.drawSky();
     this.darwStar();
     this.drawMoon();
@@ -202,9 +203,13 @@ export class meteorStart {
   }
 
   //返回随机数 最大值max 最小值min
-  rand(min, max) {
+  rand (min, max) {
     var c = max - min + 1;
     //Math.random() 0-1的随机数  Math.floor() 返回小于或等于一个给定数字的最大整数（向下取整）
     return Math.floor(Math.random() * c + min);
   }
 }
+
+const newMeteorStart = new meteorStart();
+
+export default newMeteorStart;

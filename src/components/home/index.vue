@@ -9,8 +9,7 @@
 /**
  * @description 搭建外层的框 用于保存用户信息
  */
-
-import { meteorStart } from '@/common/meteorStart';
+import meteorStart from '@/common/meteorStart';
 
 export default {
   name: 'home',
@@ -19,12 +18,10 @@ export default {
       headerImgUrl: require('./image/my-head.jpg')
     }
   },
-  mounted () {
-    new meteorStart();
-  },
   methods: {
     gotoPage () {
-      this.$route.push({ name: '' })
+      // debugger
+      this.$router.push({ name: 'myIndex' })
     }
   }
 }
@@ -38,6 +35,7 @@ export default {
   .dynamic-number {
     position: absolute;
     z-index: 10;
+    overflow: hidden;
   }
   img {
     position: absolute;

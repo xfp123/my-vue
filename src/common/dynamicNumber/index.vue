@@ -136,38 +136,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fp-box {
-  display: flex;
+.dynamic-number {
   overflow: hidden;
-  list-style: none;
-  li {
-    width: 30px;
-    height: 30px;
-    span {
-      display: block;
-      width: 100%;
-      height: 100%;
-      color: #000;
-      text-align: center;
-      line-height: 30px;
-      font-size: 20px;
-    }
-  }
-  li.card {
-    width: 30px;
-    height: 30px;
-    flex-direction: column;
-    transition: transform 1s ease-in-out;
-    span {
-      text-align: center;
-      background-image: linear-gradient(90deg, #ff8464 0%, #ff6e5c 100%);
-      box-shadow: 0 3px 16px 0 rgba(3, 5, 21, 0.12);
-      font-size: 24px;
-      color: #ffffff;
-      display: flex;
-      display: inline-block;
+  .fp-box {
+    display: flex;
+    overflow: hidden;
+    list-style: none;
+    li {
       width: 30px;
       height: 30px;
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #000;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+      }
+    }
+    li.card {
+      width: 30px;
+      height: 30px;
+      flex-direction: column;
+      transition: transform 1s ease-in-out;
+      span {
+        text-align: center;
+        background-image: linear-gradient(90deg, #ff8464 0%, #ff6e5c 100%);
+        box-shadow: 0 3px 16px 0 rgba(3, 5, 21, 0.12);
+        font-size: 24px;
+        color: #ffffff;
+        display: flex;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
